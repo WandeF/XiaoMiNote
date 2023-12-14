@@ -67,6 +67,7 @@ import net.micode.notes.gtask.remote.GTaskSyncService;
 import net.micode.notes.model.WorkingNote;
 import net.micode.notes.tool.BackupUtils;
 import net.micode.notes.tool.DataUtils;
+import net.micode.notes.tool.EncryptionUtil;
 import net.micode.notes.tool.ResourceParser;
 import net.micode.notes.ui.NotesListAdapter.AppWidgetAttribute;
 import net.micode.notes.widget.NoteWidgetProvider_2x;
@@ -603,7 +604,15 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
         positive.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 hideSoftInput(etName);
-                String name = etName.getText().toString();
+                String Fname = null;
+                try {
+                    Fname = EncryptionUtil.encrypt(etName.getText().toString());
+                } catch (Exception e) {
+                    Log.e(TAG, "Encryption failed: " + e.getMessage());
+                    // 处理加密失败的情况
+                    Fname = "Encryption Failed";
+                }
+                String name = Fname;
                 if (DataUtils.checkVisibleFolderName(mContentResolver, name)) {
                     Toast.makeText(NotesListActivity.this, getString(R.string.folder_exist, name),
                             Toast.LENGTH_LONG).show();
