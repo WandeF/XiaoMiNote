@@ -16,14 +16,19 @@
 
 package net.micode.notes.ui;
 
+import static net.micode.notes.data.Notes.TAG;
+import static net.micode.notes.gtask.data.SqlData.DATA_CONTENT_COLUMN;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.text.TextUtils;
+import android.util.Log;
 
 import net.micode.notes.data.Contact;
 import net.micode.notes.data.Notes;
 import net.micode.notes.data.Notes.NoteColumns;
 import net.micode.notes.tool.DataUtils;
+import net.micode.notes.tool.EncryptionUtil;
 
 
 public class NoteItemData {
@@ -69,6 +74,7 @@ public class NoteItemData {
     private int mWidgetType;
     private String mName;
     private String mPhoneNumber;
+    private String decryptedContent;
 
     private boolean mIsLastItem;
     private boolean mIsFirstItem;
@@ -76,7 +82,7 @@ public class NoteItemData {
     private boolean mIsOneNoteFollowingFolder;
     private boolean mIsMultiNotesFollowingFolder;
 
-    public NoteItemData(Context context, Cursor cursor) {
+    public NoteItemData(Context context, Cursor cursor)  {
         mId = cursor.getLong(ID_COLUMN);
         mAlertDate = cursor.getLong(ALERTED_DATE_COLUMN);
         mBgColorId = cursor.getInt(BG_COLOR_ID_COLUMN);
@@ -85,12 +91,21 @@ public class NoteItemData {
         mModifiedDate = cursor.getLong(MODIFIED_DATE_COLUMN);
         mNotesCount = cursor.getInt(NOTES_COUNT_COLUMN);
         mParentId = cursor.getLong(PARENT_ID_COLUMN);
-        mSnippet = cursor.getString(SNIPPET_COLUMN);
+        //mSnippet = cursor.getString(SNIPPET_COLUMN);
+        try {
+            // 解密文本数据并保存到字段中
+            mSnippet = EncryptionUtil.decrypt(cursor.getString(SNIPPET_COLUMN));
+        } catch (Exception e) {
+            Log.e(TAG, "Decryption failed: " + e.getMessage());
+            // 处理解密失败的情况
+            mSnippet = "Decryption Failed";
+        }
         mSnippet = mSnippet.replace(NoteEditActivity.TAG_CHECKED, "").replace(
                 NoteEditActivity.TAG_UNCHECKED, "");
         mType = cursor.getInt(TYPE_COLUMN);
         mWidgetId = cursor.getInt(WIDGET_ID_COLUMN);
         mWidgetType = cursor.getInt(WIDGET_TYPE_COLUMN);
+
 
         mPhoneNumber = "";
         if (mParentId == Notes.ID_CALL_RECORD_FOLDER) {
@@ -209,6 +224,8 @@ public class NoteItemData {
     public String getSnippet() {
         return mSnippet;
     }
+
+    public String getDecryptedContent() { return decryptedContent; }
 
     public boolean hasAlert() {
         return (mAlertDate > 0);

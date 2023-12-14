@@ -30,6 +30,7 @@ import net.micode.notes.data.Notes.CallNote;
 import net.micode.notes.data.Notes.DataColumns;
 import net.micode.notes.data.Notes.NoteColumns;
 import net.micode.notes.data.Notes.TextNote;
+import net.micode.notes.tool.EncryptionUtil;
 
 import java.util.ArrayList;
 
@@ -172,11 +173,13 @@ public class Note {
             mNoteDiffValues.put(NoteColumns.MODIFIED_DATE, System.currentTimeMillis());
         }
 
+        // 加密便签文本数据
         void setTextData(String key, String value) {
             mTextDataValues.put(key, value);
             mNoteDiffValues.put(NoteColumns.LOCAL_MODIFIED, 1);
             mNoteDiffValues.put(NoteColumns.MODIFIED_DATE, System.currentTimeMillis());
         }
+
 
         Uri pushIntoContentResolver(Context context, long noteId) {
             /**

@@ -10,7 +10,7 @@
         <item>Messaging</item>
         <item>Email</item>
     </string-array>
-    <color name="user_query_highlight">#335b5b5b</color>
+    <color name="user_query_highlight">#673AB7</color>
     <dimen name="text_font_size_large">26sp</dimen>
     <dimen name="text_font_size_medium">20sp</dimen>
     <dimen name="text_font_size_normal">17sp</dimen>
@@ -132,8 +132,8 @@
         <item name="android:textColor">@color/secondary_text_dark</item>
     </style>
     <style name="NoteActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
-        <item name="android:displayOptions"/>
-        <item name="android:visibility">gone</item>
+        
+        <item name="android:visibility">visible</item>
     </style>
     <style name="NoteTheme" parent="@android:style/Theme.Holo.Light">
         <item name="android:actionBarStyle">@style/NoteActionBarStyle</item>

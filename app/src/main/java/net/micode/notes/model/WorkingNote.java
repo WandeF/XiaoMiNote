@@ -29,6 +29,7 @@ import net.micode.notes.data.Notes.DataColumns;
 import net.micode.notes.data.Notes.DataConstants;
 import net.micode.notes.data.Notes.NoteColumns;
 import net.micode.notes.data.Notes.TextNote;
+import net.micode.notes.tool.EncryptionUtil;
 import net.micode.notes.tool.ResourceParser.NoteBgResources;
 
 
@@ -149,7 +150,7 @@ public class WorkingNote {
     private void loadNoteData() {
         Cursor cursor = mContext.getContentResolver().query(Notes.CONTENT_DATA_URI, DATA_PROJECTION,
                 DataColumns.NOTE_ID + "=?", new String[] {
-                    String.valueOf(mNoteId)
+                        String.valueOf(mNoteId)
                 }, null);
 
         if (cursor != null) {
@@ -157,7 +158,15 @@ public class WorkingNote {
                 do {
                     String type = cursor.getString(DATA_MIME_TYPE_COLUMN);
                     if (DataConstants.NOTE.equals(type)) {
-                        mContent = cursor.getString(DATA_CONTENT_COLUMN);
+                        String encryptedContent = cursor.getString(DATA_CONTENT_COLUMN);
+                        try {
+                            // 解密文本数据
+                            mContent = EncryptionUtil.decrypt(encryptedContent);
+                        } catch (Exception e) {
+                            Log.e(TAG, "Decryption failed: " + e.getMessage());
+                            // 处理解密失败的情况
+                            mContent = "Decryption Failed";
+                        }
                         mMode = cursor.getInt(DATA_MODE_COLUMN);
                         mNote.setTextDataId(cursor.getLong(DATA_ID_COLUMN));
                     } else if (DataConstants.CALL_NOTE.equals(type)) {
@@ -173,6 +182,7 @@ public class WorkingNote {
             throw new IllegalArgumentException("Unable to find note's data with id " + mNoteId);
         }
     }
+
 
     public static WorkingNote createEmptyNote(Context context, long folderId, int widgetId,
             int widgetType, int defaultBgColorId) {
@@ -284,7 +294,19 @@ public class WorkingNote {
     public void setWorkingText(String text) {
         if (!TextUtils.equals(mContent, text)) {
             mContent = text;
-            mNote.setTextData(DataColumns.CONTENT, mContent);
+
+            // 在这里对文本进行加密
+            String encryptedText = null;
+            try {
+                encryptedText = EncryptionUtil.encrypt(mContent);
+            } catch (Exception e) {
+                Log.e(TAG, "Encryption failed: " + e.getMessage());
+                // 处理加密失败的情况
+                encryptedText = "Encryption Failed";
+            }
+
+            // 设置加密后的文本数据
+            mNote.setTextData(DataColumns.CONTENT, encryptedText);
         }
     }
 

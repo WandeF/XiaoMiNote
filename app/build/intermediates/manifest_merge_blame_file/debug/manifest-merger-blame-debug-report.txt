@@ -20,254 +20,254 @@
 20    android:versionName="0.1" >
 21
 22    <uses-sdk
-22-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:23:5-44
+22-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:23:5-44
 23        android:minSdkVersion="14"
-23-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:23:15-41
+23-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:23:15-41
 24        android:targetSdkVersion="29" />
 25
 26    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-26-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:25:5-81
-26-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:25:22-78
+26-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:25:5-81
+26-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:25:22-78
 27    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
-27-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:26:5-88
-27-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:26:22-85
+27-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:26:5-88
+27-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:26:22-85
 28    <uses-permission android:name="android.permission.INTERNET" />
-28-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:27:5-67
-28-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:27:22-64
+28-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:27:5-67
+28-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:27:22-64
 29    <uses-permission android:name="android.permission.READ_CONTACTS" />
-29-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:28:5-72
-29-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:28:22-69
+29-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:28:5-72
+29-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:28:22-69
 30    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
-30-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:29:5-74
-30-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:29:22-71
+30-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:29:5-74
+30-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:29:22-71
 31    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
-31-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:30:5-80
-31-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:30:22-77
+31-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:30:5-80
+31-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:30:22-77
 32    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-32-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:31:5-71
-32-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:31:22-68
+32-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:31:5-71
+32-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:31:22-68
 33    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
-33-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:32:5-74
-33-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:32:22-71
+33-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:32:5-74
+33-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:32:22-71
 34    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-34-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:33:5-81
-34-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:33:22-78
+34-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:33:5-81
+34-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:33:22-78
 35
 36    <application
-36-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:35:5-149:19
+36-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:35:5-149:19
 37        android:debuggable="true"
 38        android:extractNativeLibs="true"
 39        android:icon="@drawable/icon_app"
-39-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:36:9-42
+39-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:36:9-42
 40        android:label="@string/app_name"
-40-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:37:9-41
+40-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:37:9-41
 41        android:testOnly="true" >
 42        <activity
-42-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:38:9-51:20
+42-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:38:9-51:20
 43            android:name="net.micode.notes.ui.NotesListActivity"
-43-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:39:13-49
+43-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:39:13-49
 44            android:configChanges="keyboardHidden|orientation|screenSize"
-44-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:40:13-74
+44-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:40:13-74
 45            android:label="@string/app_name"
-45-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:41:13-45
+45-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:41:13-45
 46            android:launchMode="singleTop"
-46-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:42:13-43
+46-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:42:13-43
 47            android:theme="@style/NoteTheme"
-47-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:43:13-45
+47-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:43:13-45
 48            android:uiOptions="splitActionBarWhenNarrow"
-48-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:44:13-57
+48-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:44:13-57
 49            android:windowSoftInputMode="adjustPan" >
-49-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:45:13-52
+49-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:45:13-52
 50            <intent-filter>
-50-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:47:13-50:29
+50-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:47:13-50:29
 51                <action android:name="android.intent.action.MAIN" />
-51-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:48:17-69
-51-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:48:25-66
+51-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:48:17-69
+51-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:48:25-66
 52
 53                <category android:name="android.intent.category.LAUNCHER" />
-53-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:49:17-77
-53-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:49:27-74
+53-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:49:17-77
+53-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:49:27-74
 54            </intent-filter>
 55        </activity>
 56        <activity
-56-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:53:9-81:20
+56-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:53:9-81:20
 57            android:name="net.micode.notes.ui.NoteEditActivity"
-57-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:54:13-48
+57-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:54:13-48
 58            android:configChanges="keyboardHidden|orientation|screenSize"
-58-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:55:13-74
+58-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:55:13-74
 59            android:launchMode="singleTop"
-59-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:56:13-43
+59-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:56:13-43
 60            android:theme="@style/NoteTheme" >
-60-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:57:13-45
+60-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:57:13-45
 61            <intent-filter>
-61-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:59:13-64:29
+61-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:59:13-64:29
 62                <action android:name="android.intent.action.VIEW" />
-62-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:60:17-69
-62-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:60:25-66
+62-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:60:17-69
+62-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:60:25-66
 63
 64                <category android:name="android.intent.category.DEFAULT" />
-64-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:61:17-76
-64-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:61:27-73
+64-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:61:17-76
+64-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:61:27-73
 65
 66                <data android:mimeType="vnd.android.cursor.item/text_note" />
-66-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:62:17-78
-66-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:62:23-75
+66-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:62:17-78
+66-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:62:23-75
 67                <data android:mimeType="vnd.android.cursor.item/call_note" />
-67-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:62:17-78
-67-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:62:23-75
+67-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:62:17-78
+67-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:62:23-75
 68            </intent-filter>
 69            <intent-filter>
-69-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:66:13-71:29
+69-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:66:13-71:29
 70                <action android:name="android.intent.action.INSERT_OR_EDIT" />
-70-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:67:17-79
-70-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:67:25-76
+70-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:67:17-79
+70-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:67:25-76
 71
 72                <category android:name="android.intent.category.DEFAULT" />
-72-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:61:17-76
-72-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:61:27-73
+72-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:61:17-76
+72-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:61:27-73
 73
 74                <data android:mimeType="vnd.android.cursor.item/text_note" />
-74-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:62:17-78
-74-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:62:23-75
+74-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:62:17-78
+74-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:62:23-75
 75                <data android:mimeType="vnd.android.cursor.item/call_note" />
-75-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:62:17-78
-75-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:62:23-75
+75-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:62:17-78
+75-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:62:23-75
 76            </intent-filter>
 77            <intent-filter>
-77-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:73:13-76:29
+77-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:73:13-76:29
 78                <action android:name="android.intent.action.SEARCH" />
-78-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:74:17-71
-78-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:74:25-68
+78-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:74:17-71
+78-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:74:25-68
 79
 80                <category android:name="android.intent.category.DEFAULT" />
-80-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:61:17-76
-80-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:61:27-73
+80-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:61:17-76
+80-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:61:27-73
 81            </intent-filter>
 82
 83            <meta-data
-83-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:78:13-80:54
+83-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:78:13-80:54
 84                android:name="android.app.searchable"
-84-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:79:17-54
+84-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:79:17-54
 85                android:resource="@xml/searchable" />
-85-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:80:17-51
+85-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:80:17-51
 86        </activity>
 87
 88        <provider
-88-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:83:9-86:43
+88-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:83:9-86:43
 89            android:name="net.micode.notes.data.NotesProvider"
-89-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:84:13-63
+89-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:84:13-63
 90            android:authorities="micode_notes"
-90-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:85:13-47
+90-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:85:13-47
 91            android:multiprocess="true" />
-91-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:86:13-40
+91-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:86:13-40
 92
 93        <receiver
-93-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:88:9-100:20
+93-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:88:9-100:20
 94            android:name="net.micode.notes.widget.NoteWidgetProvider_2x"
-94-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:89:13-57
+94-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:89:13-57
 95            android:label="@string/app_widget2x2" >
-95-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:90:13-50
+95-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:90:13-50
 96            <intent-filter>
-96-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:91:13-95:29
+96-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:91:13-95:29
 97                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-97-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:92:17-84
-97-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:92:25-81
+97-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:92:17-84
+97-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:92:25-81
 98                <action android:name="android.appwidget.action.APPWIDGET_DELETED" />
-98-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:93:17-85
-98-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:93:25-82
+98-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:93:17-85
+98-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:93:25-82
 99                <action android:name="android.intent.action.PRIVACY_MODE_CHANGED" />
-99-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:94:17-85
-99-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:94:25-82
+99-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:94:17-85
+99-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:94:25-82
 100            </intent-filter>
 101
 102            <meta-data
-102-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:97:13-99:58
+102-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:97:13-99:58
 103                android:name="android.appwidget.provider"
-103-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:98:17-58
+103-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:98:17-58
 104                android:resource="@xml/widget_2x_info" />
-104-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:99:17-55
+104-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:99:17-55
 105        </receiver>
 106        <receiver
-106-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:101:9-114:20
+106-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:101:9-114:20
 107            android:name="net.micode.notes.widget.NoteWidgetProvider_4x"
-107-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:102:13-57
+107-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:102:13-57
 108            android:label="@string/app_widget4x4" >
-108-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:103:13-50
+108-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:103:13-50
 109            <intent-filter>
-109-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:91:13-95:29
+109-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:91:13-95:29
 110                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-110-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:92:17-84
-110-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:92:25-81
+110-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:92:17-84
+110-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:92:25-81
 111                <action android:name="android.appwidget.action.APPWIDGET_DELETED" />
-111-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:93:17-85
-111-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:93:25-82
+111-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:93:17-85
+111-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:93:25-82
 112                <action android:name="android.intent.action.PRIVACY_MODE_CHANGED" />
-112-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:94:17-85
-112-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:94:25-82
+112-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:94:17-85
+112-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:94:25-82
 113            </intent-filter>
 114
 115            <meta-data
-115-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:97:13-99:58
+115-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:97:13-99:58
 116                android:name="android.appwidget.provider"
-116-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:98:17-58
+116-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:98:17-58
 117                android:resource="@xml/widget_4x_info" />
-117-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:99:17-55
+117-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:99:17-55
 118        </receiver>
 119        <receiver android:name="net.micode.notes.ui.AlarmInitReceiver" >
-119-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:116:9-120:20
-119-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:116:19-55
+119-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:116:9-120:20
+119-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:116:19-55
 120            <intent-filter>
-120-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:117:13-119:29
+120-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:117:13-119:29
 121                <action android:name="android.intent.action.BOOT_COMPLETED" />
-121-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:118:17-79
-121-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:118:25-76
+121-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:118:17-79
+121-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:118:25-76
 122            </intent-filter>
 123        </receiver>
 124        <receiver
-124-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:122:9-125:20
+124-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:122:9-125:20
 125            android:name="net.micode.notes.ui.AlarmReceiver"
-125-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:123:13-61
+125-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:123:13-61
 126            android:process=":remote" >
-126-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:124:13-38
+126-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:124:13-38
 127        </receiver>
 128
 129        <activity
-129-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:127:9-132:20
+129-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:127:9-132:20
 130            android:name="net.micode.notes.ui.AlarmAlertActivity"
-130-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:128:13-50
+130-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:128:13-50
 131            android:label="@string/app_name"
-131-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:129:13-45
+131-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:129:13-45
 132            android:launchMode="singleInstance"
-132-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:130:13-48
+132-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:130:13-48
 133            android:theme="@android:style/Theme.Holo.Wallpaper.NoTitleBar" >
-133-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:131:13-75
+133-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:131:13-75
 134        </activity>
 135        <activity
-135-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:134:9-139:20
+135-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:134:9-139:20
 136            android:name="net.micode.notes.ui.NotesPreferenceActivity"
-136-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:135:13-71
+136-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:135:13-71
 137            android:label="@string/preferences_title"
-137-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:136:13-54
+137-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:136:13-54
 138            android:launchMode="singleTop"
-138-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:137:13-43
+138-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:137:13-43
 139            android:theme="@android:style/Theme.Holo.Light" >
-139-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:138:13-60
+139-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:138:13-60
 140        </activity>
 141
 142        <service
-142-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:141:9-144:19
+142-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:141:9-144:19
 143            android:name="net.micode.notes.gtask.remote.GTaskSyncService"
-143-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:142:13-74
+143-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:142:13-74
 144            android:exported="false" >
-144-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:143:13-37
+144-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:143:13-37
 145        </service>
 146
 147        <meta-data
-147-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:146:9-148:52
+147-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:146:9-148:52
 148            android:name="android.app.default_searchable"
-148-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:147:13-58
+148-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:147:13-58
 149            android:value=".ui.NoteEditActivity" />
-149-->C:\Users\26652\StudioProjects\Notes\app\src\main\AndroidManifest.xml:148:13-49
+149-->D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:148:13-49
 150    </application>
 151
 152</manifest>

@@ -18,7 +18,8 @@
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu_new_folder"
+        android:id="@+id/menu_
+        new_folder"
         android:title="@string/menu_create_folder"/>
 
     <item
