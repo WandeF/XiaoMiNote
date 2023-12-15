@@ -91,10 +91,11 @@ public class NoteItemData {
         mModifiedDate = cursor.getLong(MODIFIED_DATE_COLUMN);
         mNotesCount = cursor.getInt(NOTES_COUNT_COLUMN);
         mParentId = cursor.getLong(PARENT_ID_COLUMN);
-        //mSnippet = cursor.getString(SNIPPET_COLUMN);
+        mSnippet = cursor.getString(SNIPPET_COLUMN);
+
         try {
             // 解密文本数据并保存到字段中
-            mSnippet = EncryptionUtil.decrypt(cursor.getString(SNIPPET_COLUMN));
+            mSnippet = EncryptionUtil.decrypt(mSnippet);
         } catch (Exception e) {
             Log.e(TAG, "Decryption failed: " + e.getMessage());
             // 处理解密失败的情况
@@ -102,6 +103,7 @@ public class NoteItemData {
         }
         mSnippet = mSnippet.replace(NoteEditActivity.TAG_CHECKED, "").replace(
                 NoteEditActivity.TAG_UNCHECKED, "");
+
         mType = cursor.getInt(TYPE_COLUMN);
         mWidgetId = cursor.getInt(WIDGET_ID_COLUMN);
         mWidgetType = cursor.getInt(WIDGET_TYPE_COLUMN);
@@ -124,6 +126,50 @@ public class NoteItemData {
         checkPostion(cursor);
     }
 
+    public NoteItemData(Context context, Cursor cursor, int secret_mode)  {
+        mId = cursor.getLong(ID_COLUMN);
+        mAlertDate = cursor.getLong(ALERTED_DATE_COLUMN);
+        mBgColorId = cursor.getInt(BG_COLOR_ID_COLUMN);
+        mCreatedDate = cursor.getLong(CREATED_DATE_COLUMN);
+        mHasAttachment = (cursor.getInt(HAS_ATTACHMENT_COLUMN) > 0) ? true : false;
+        mModifiedDate = cursor.getLong(MODIFIED_DATE_COLUMN);
+        mNotesCount = cursor.getInt(NOTES_COUNT_COLUMN);
+        mParentId = cursor.getLong(PARENT_ID_COLUMN);
+        //mSnippet = cursor.getString(SNIPPET_COLUMN);
+        try {
+            // 解密文本数据并保存到字段中
+            mSnippet = EncryptionUtil.decrypt(cursor.getString(SNIPPET_COLUMN));
+        } catch (Exception e) {
+            Log.e(TAG, "Decryption failed: " + e.getMessage());
+            // 处理解密失败的情况
+            mSnippet = "Decryption Failed";
+        }
+        mSnippet = mSnippet.replace(NoteEditActivity.TAG_CHECKED, "").replace(
+                NoteEditActivity.TAG_UNCHECKED, "");
+        if(secret_mode == 1){
+            mSnippet = mSnippet.substring(0,1);
+        }
+        mType = cursor.getInt(TYPE_COLUMN);
+        mWidgetId = cursor.getInt(WIDGET_ID_COLUMN);
+        mWidgetType = cursor.getInt(WIDGET_TYPE_COLUMN);
+
+
+        mPhoneNumber = "";
+        if (mParentId == Notes.ID_CALL_RECORD_FOLDER) {
+            mPhoneNumber = DataUtils.getCallNumberByNoteId(context.getContentResolver(), mId);
+            if (!TextUtils.isEmpty(mPhoneNumber)) {
+                mName = Contact.getContact(context, mPhoneNumber);
+                if (mName == null) {
+                    mName = mPhoneNumber;
+                }
+            }
+        }
+
+        if (mName == null) {
+            mName = "";
+        }
+        checkPostion(cursor);
+    }
     private void checkPostion(Cursor cursor) {
         mIsLastItem = cursor.isLast() ? true : false;
         mIsFirstItem = cursor.isFirst() ? true : false;
