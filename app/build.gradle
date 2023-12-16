@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     namespace "net.micode.notes"
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "34.0.0"
     useLibrary 'org.apache.http.legacy'
 
@@ -19,4 +19,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+}
+dependencies {
+    implementation 'androidx.biometric:biometric:1.2.0-alpha04'
 }
