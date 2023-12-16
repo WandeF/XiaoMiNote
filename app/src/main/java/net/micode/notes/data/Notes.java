@@ -165,6 +165,7 @@ public class Notes {
          * <P> Type : INTEGER (long) </P>
          */
         public static final String VERSION = "version";
+        public static final String SECRET = "secret";
     }
 
     public interface DataColumns {
@@ -239,6 +240,7 @@ public class Notes {
          * <P> Type: TEXT </P>
          */
         public static final String DATA5 = "data5";
+
     }
 
     public static final class TextNote implements DataColumns {
@@ -255,6 +257,9 @@ public class Notes {
         public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/text_note";
 
         public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/text_note");
+
+        public static final String SECRET = DATA5;
+        public static final int SECRET_CHECK_LIST = 1;
     }
 
     public static final class CallNote implements DataColumns {
