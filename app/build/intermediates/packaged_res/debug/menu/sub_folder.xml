@@ -21,4 +21,5 @@
     <item
         android:id="@+id/menu_new_note"
         android:title="@string/notelist_menu_new"/>
+
 </menu>

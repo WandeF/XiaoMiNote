@@ -65,16 +65,19 @@
     <string name="menu_font_size">Font size</string>
     <string name="menu_font_small">Small</string>
     <string name="menu_font_super">Super</string>
+    <string name="menu_insert_img">Insert image</string>
     <string name="menu_list_mode">Enter check list</string>
     <string name="menu_move">Move to folder</string>
     <string name="menu_move_parent_folder">Parent folder</string>
     <string name="menu_normal_mode">Leave check list</string>
+    <string name="menu_quit_secret">Quit secret</string>
     <string name="menu_remove_remind">Delete reminder</string>
     <string name="menu_search">Search</string>
     <string name="menu_select_all">Select all</string>
     <string name="menu_select_none">Nothing selected, the operation is invalid</string>
     <string name="menu_select_title">%d selected</string>
     <string name="menu_send_to_desktop">Send to home</string>
+    <string name="menu_set_secret">Set secret</string>
     <string name="menu_setting">Settings</string>
     <string name="menu_share">Share</string>
     <string name="menu_sync">Sync</string>
@@ -135,7 +138,7 @@
         
         <item name="android:visibility">visible</item>
     </style>
-    <style name="NoteTheme" parent="@android:style/Theme.Holo.Light">
+    <style name="NoteTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/NoteActionBarStyle</item>
     </style>
     <style name="TextAppearanceLarge">

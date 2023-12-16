@@ -73,6 +73,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.biometric.BiometricPrompt;
+import androidx.core.content.ContextCompat;
+
 import net.micode.notes.R;
 import net.micode.notes.data.Notes;
 import net.micode.notes.data.Notes.TextNote;
@@ -80,6 +83,8 @@ import net.micode.notes.model.WorkingNote;
 import net.micode.notes.model.WorkingNote.NoteSettingChangedListener;
 import net.micode.notes.tool.DataUtils;
 import net.micode.notes.tool.EncryptionUtil;
+import net.micode.notes.tool.FingerprintCallback;
+import net.micode.notes.tool.FingerprintHelper;
 import net.micode.notes.tool.ResourceParser;
 import net.micode.notes.tool.ResourceParser.TextAppearanceResources;
 import net.micode.notes.ui.DateTimePickerDialog.OnDateTimeSetListener;
@@ -91,11 +96,12 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.concurrent.Executor;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import androidx.appcompat.app.AppCompatActivity;
 
-
-public class NoteEditActivity extends Activity implements OnClickListener,
+public class NoteEditActivity extends AppCompatActivity implements OnClickListener,
         NoteSettingChangedListener, OnTextViewChangeListener {
     private class HeadViewHolder {
         public TextView tvModified;
@@ -587,8 +593,20 @@ public class NoteEditActivity extends Activity implements OnClickListener,
         } else if (itemId == R.id.menu_delete_remind) {
             mWorkingNote.setAlertDate(0, false);
         } else if (itemId == R.id.menu_set_secret) {
-            mWorkingNote.setCheckSecret(mWorkingNote.getCheckSecret() == 0 ?
-                    TextNote.SECRET_CHECK_LIST: 0);
+            FingerprintHelper fingerprintHelper = new FingerprintHelper(this, new FingerprintCallback() {
+                @Override
+                public void onAuthenticationResult(boolean success) {
+                    // 处理认证结果
+                    if (success) {
+                        Toast.makeText(NoteEditActivity.this, "指纹认证成功", Toast.LENGTH_SHORT).show();
+                        mWorkingNote.setCheckSecret(mWorkingNote.getCheckSecret() == 0 ?
+                                TextNote.SECRET_CHECK_LIST: 0);
+                    } else {
+                        Toast.makeText(NoteEditActivity.this, "指纹认证失败", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+            fingerprintHelper.startFingerprintAuthentication();
         }
         return true;
     }
@@ -989,18 +1007,20 @@ public class NoteEditActivity extends Activity implements OnClickListener,
 
     @Override
     public void onCheckSecretChanged(int oldSecret, int newSecret) {
+
         if(newSecret == TextNote.SECRET_CHECK_LIST) {
             try {
                 mNoteEditor.setText(EncryptionUtil.encrypt(mNoteEditor.getText().toString()));
-
+                mWorkingNote.setBgColorId(1);
             } catch (Exception e) {
                 Log.e(TAG, "Decryption failed: " + e.getMessage());
                 // 处理解密失败的情况
             }
-
         } else {
             try {
                 mNoteEditor.setText(EncryptionUtil.decrypt(mNoteEditor.getText().toString()));
+                mWorkingNote.setBgColorId(0);
+
             } catch (Exception e) {
                 Log.e(TAG, "Decryption failed: " + e.getMessage());
                 // 处理解密失败的情况
@@ -1096,4 +1116,40 @@ public class NoteEditActivity extends Activity implements OnClickListener,
     private void showToast(int resId, int duration) {
         Toast.makeText(this, resId, duration).show();
     }
+
+    // 在需要使用指纹识别的地方调用该方法
+//    private void showBiometricPrompt() {
+//        Executor executor = ContextCompat.getMainExecutor(NoteEditActivity.this);
+//        BiometricPrompt.AuthenticationCallback callback = createAuthenticationCallback();
+//        BiometricPrompt biometricPrompt = new BiometricPrompt(NoteEditActivity.this, executor, callback);
+//
+//        BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
+//                .setTitle("指纹识别")
+//                .setSubtitle("使用指纹解锁")
+//                .setDescription("请使用您的指纹进行身份验证")
+//                .setNegativeButtonText("取消")
+//                .build();
+//
+//        biometricPrompt.authenticate(promptInfo);
+//    }
+//
+//    private BiometricPrompt.AuthenticationCallback createAuthenticationCallback() {
+//        return new BiometricPrompt.AuthenticationCallback() {
+//            @Override
+//            public void onAuthenticationError(int errorCode, CharSequence errString) {
+//                // 处理错误情况
+//            }
+//
+//            @Override
+//            public void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult result) {
+//                // 处理识别成功情况
+//            }
+//
+//            @Override
+//            public void onAuthenticationFailed() {
+//                // 处理识别失败情况
+//            }
+//        };
+//    }
+
 }

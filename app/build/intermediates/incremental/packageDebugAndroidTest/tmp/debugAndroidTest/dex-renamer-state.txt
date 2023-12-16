@@ -1,4 +1,4 @@
-#Thu Dec 07 11:05:34 HKT 2023
-base.0=D\:\\CODE\\XiaoMiNote\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeDexDebugAndroidTest\\classes.dex
-path.0=classes.dex
+#Sat Dec 16 15:21:35 HKT 2023
+base.0=D\:\\CODE\\11\\XiaoMiNote\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+path.0=0/classes.dex
 renamed.0=classes.dex

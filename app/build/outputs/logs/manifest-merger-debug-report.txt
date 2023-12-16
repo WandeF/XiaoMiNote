@@ -1,227 +1,323 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:18:1-150:12
-INJECTED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:18:1-150:12
-INJECTED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:18:1-150:12
-INJECTED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:18:1-150:12
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:18:1-157:12
+INJECTED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:18:1-157:12
+INJECTED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:18:1-157:12
+INJECTED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:18:1-157:12
+MERGED from [androidx.databinding:viewbinding:8.1.3] C:\Users\26652\.gradle\caches\transforms-3\aee9473430edb0a0f5701c3d8d18308c\transformed\jetified-viewbinding-8.1.3\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.biometric:biometric:1.2.0-alpha04] C:\Users\26652\.gradle\caches\transforms-3\17f0638209d03cf5908cac1b3dbe9f73\transformed\biometric-1.2.0-alpha04\AndroidManifest.xml:17:1-29:12
+MERGED from [androidx.core:core-ktx:1.7.0] C:\Users\26652\.gradle\caches\transforms-3\8f9afc3d92c4b5cfc1de22e20ac21179\transformed\jetified-core-ktx-1.7.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\26652\.gradle\caches\transforms-3\735bd905f084ccfb4b17574b80a8c585\transformed\appcompat-1.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\26652\.gradle\caches\transforms-3\c6c3adebadb2665be100d5211a1ef382\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\26652\.gradle\caches\transforms-3\e7ddd16fd8b1fe69df41d0e4942503a2\transformed\jetified-activity-1.2.4\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\26652\.gradle\caches\transforms-3\218a146d9c3efa838d1a3e3b5d61d6f1\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\9853aee1f7496b00da3a1e7e03db31c3\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\0f3122d9d2e5e8dc23576e8fe6033800\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\72ac7939cfac6baaf3ca938ea0e25983\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\26652\.gradle\caches\transforms-3\bcc4d444a2a734be677763ff6c7449ae\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\26652\.gradle\caches\transforms-3\b624365659dd3aafc372923056d5f712\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\3ec8c36bdcb6d9403af1451c6cbbbdc9\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.7.0] C:\Users\26652\.gradle\caches\transforms-3\f9ae17ce744089db08ea901d5ac55cb3\transformed\core-1.7.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\26652\.gradle\caches\transforms-3\b3e0cdd103617035a70663ceec3d6716\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\26652\.gradle\caches\transforms-3\e1ceb886699fc498ec51da4167f7a1a8\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\78617eef17cb8d930b0d3c4952977d61\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\26652\.gradle\caches\transforms-3\49045fdf8797fd49441c92090ce5194b\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\26652\.gradle\caches\transforms-3\5f0624ac9555cdeb1170c65e559ddfb7\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\26652\.gradle\caches\transforms-3\12da910a578e381d4aa9b9bf4d7c3da0\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\26652\.gradle\caches\transforms-3\55e1a0bd0c5d51e3f01edf3ccf10a406\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\26652\.gradle\caches\transforms-3\d74d67a06dda5147b47f5c93d490a85e\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\26652\.gradle\caches\transforms-3\a4f715409e5af4f88ea5ed59753570f8\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\67867e9df839197db3868abe84e4d76d\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\ad279b5b1283f10e8f1680c3c041704b\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\26652\.gradle\caches\transforms-3\a24bd8b3d7c85f6b85f97941bfbbee12\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 	package
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:19:5-31
-		INJECTED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:19:5-31
+		INJECTED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:21:5-30
-		INJECTED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:21:5-30
+		INJECTED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:18:11-69
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:18:11-69
 	android:versionCode
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:20:5-28
-		INJECTED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:20:5-28
+		INJECTED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml
 uses-sdk
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:23:5-44
-INJECTED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:23:5-44
-INJECTED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:23:5-44
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:23:5-44
+INJECTED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:23:5-44
+INJECTED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:23:5-44
+MERGED from [androidx.databinding:viewbinding:8.1.3] C:\Users\26652\.gradle\caches\transforms-3\aee9473430edb0a0f5701c3d8d18308c\transformed\jetified-viewbinding-8.1.3\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.1.3] C:\Users\26652\.gradle\caches\transforms-3\aee9473430edb0a0f5701c3d8d18308c\transformed\jetified-viewbinding-8.1.3\AndroidManifest.xml:5:5-44
+MERGED from [androidx.biometric:biometric:1.2.0-alpha04] C:\Users\26652\.gradle\caches\transforms-3\17f0638209d03cf5908cac1b3dbe9f73\transformed\biometric-1.2.0-alpha04\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.biometric:biometric:1.2.0-alpha04] C:\Users\26652\.gradle\caches\transforms-3\17f0638209d03cf5908cac1b3dbe9f73\transformed\biometric-1.2.0-alpha04\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.7.0] C:\Users\26652\.gradle\caches\transforms-3\8f9afc3d92c4b5cfc1de22e20ac21179\transformed\jetified-core-ktx-1.7.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.7.0] C:\Users\26652\.gradle\caches\transforms-3\8f9afc3d92c4b5cfc1de22e20ac21179\transformed\jetified-core-ktx-1.7.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\26652\.gradle\caches\transforms-3\735bd905f084ccfb4b17574b80a8c585\transformed\appcompat-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\26652\.gradle\caches\transforms-3\735bd905f084ccfb4b17574b80a8c585\transformed\appcompat-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\26652\.gradle\caches\transforms-3\c6c3adebadb2665be100d5211a1ef382\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\26652\.gradle\caches\transforms-3\c6c3adebadb2665be100d5211a1ef382\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\26652\.gradle\caches\transforms-3\e7ddd16fd8b1fe69df41d0e4942503a2\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\26652\.gradle\caches\transforms-3\e7ddd16fd8b1fe69df41d0e4942503a2\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\26652\.gradle\caches\transforms-3\218a146d9c3efa838d1a3e3b5d61d6f1\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.3.1] C:\Users\26652\.gradle\caches\transforms-3\218a146d9c3efa838d1a3e3b5d61d6f1\transformed\jetified-appcompat-resources-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\9853aee1f7496b00da3a1e7e03db31c3\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\9853aee1f7496b00da3a1e7e03db31c3\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\0f3122d9d2e5e8dc23576e8fe6033800\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\0f3122d9d2e5e8dc23576e8fe6033800\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\72ac7939cfac6baaf3ca938ea0e25983\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\72ac7939cfac6baaf3ca938ea0e25983\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\26652\.gradle\caches\transforms-3\bcc4d444a2a734be677763ff6c7449ae\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\26652\.gradle\caches\transforms-3\bcc4d444a2a734be677763ff6c7449ae\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\26652\.gradle\caches\transforms-3\b624365659dd3aafc372923056d5f712\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\26652\.gradle\caches\transforms-3\b624365659dd3aafc372923056d5f712\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\3ec8c36bdcb6d9403af1451c6cbbbdc9\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\3ec8c36bdcb6d9403af1451c6cbbbdc9\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.7.0] C:\Users\26652\.gradle\caches\transforms-3\f9ae17ce744089db08ea901d5ac55cb3\transformed\core-1.7.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.7.0] C:\Users\26652\.gradle\caches\transforms-3\f9ae17ce744089db08ea901d5ac55cb3\transformed\core-1.7.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\26652\.gradle\caches\transforms-3\b3e0cdd103617035a70663ceec3d6716\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\26652\.gradle\caches\transforms-3\b3e0cdd103617035a70663ceec3d6716\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\26652\.gradle\caches\transforms-3\e1ceb886699fc498ec51da4167f7a1a8\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\26652\.gradle\caches\transforms-3\e1ceb886699fc498ec51da4167f7a1a8\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\78617eef17cb8d930b0d3c4952977d61\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\78617eef17cb8d930b0d3c4952977d61\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\26652\.gradle\caches\transforms-3\49045fdf8797fd49441c92090ce5194b\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\26652\.gradle\caches\transforms-3\49045fdf8797fd49441c92090ce5194b\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\26652\.gradle\caches\transforms-3\5f0624ac9555cdeb1170c65e559ddfb7\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\26652\.gradle\caches\transforms-3\5f0624ac9555cdeb1170c65e559ddfb7\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\26652\.gradle\caches\transforms-3\12da910a578e381d4aa9b9bf4d7c3da0\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\26652\.gradle\caches\transforms-3\12da910a578e381d4aa9b9bf4d7c3da0\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\26652\.gradle\caches\transforms-3\55e1a0bd0c5d51e3f01edf3ccf10a406\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\26652\.gradle\caches\transforms-3\55e1a0bd0c5d51e3f01edf3ccf10a406\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\26652\.gradle\caches\transforms-3\d74d67a06dda5147b47f5c93d490a85e\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\26652\.gradle\caches\transforms-3\d74d67a06dda5147b47f5c93d490a85e\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\26652\.gradle\caches\transforms-3\a4f715409e5af4f88ea5ed59753570f8\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\26652\.gradle\caches\transforms-3\a4f715409e5af4f88ea5ed59753570f8\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\67867e9df839197db3868abe84e4d76d\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\67867e9df839197db3868abe84e4d76d\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\ad279b5b1283f10e8f1680c3c041704b\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\26652\.gradle\caches\transforms-3\ad279b5b1283f10e8f1680c3c041704b\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\26652\.gradle\caches\transforms-3\a24bd8b3d7c85f6b85f97941bfbbee12\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\26652\.gradle\caches\transforms-3\a24bd8b3d7c85f6b85f97941bfbbee12\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
 	android:targetSdkVersion
-		INJECTED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml
+		INJECTED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:23:15-41
-		INJECTED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:23:15-41
+		INJECTED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:25:5-81
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:25:5-81
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:25:22-78
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:25:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:26:22-77
 uses-permission#com.android.launcher.permission.INSTALL_SHORTCUT
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:26:5-88
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:27:5-88
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:26:22-85
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:27:22-85
 uses-permission#android.permission.INTERNET
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:27:5-67
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:28:5-67
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:27:22-64
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:28:22-64
 uses-permission#android.permission.READ_CONTACTS
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:28:5-72
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:29:5-72
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:28:22-69
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:29:22-69
 uses-permission#android.permission.MANAGE_ACCOUNTS
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:29:5-74
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:30:5-74
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:29:22-71
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:30:22-71
 uses-permission#android.permission.AUTHENTICATE_ACCOUNTS
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:30:5-80
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:31:5-80
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:30:22-77
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:31:22-77
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:31:5-71
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:32:5-71
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:31:22-68
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:32:22-68
 uses-permission#android.permission.USE_CREDENTIALS
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:32:5-74
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:33:5-74
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:32:22-71
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:33:22-71
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:33:5-81
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:34:5-81
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:33:22-78
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:34:22-78
 application
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:35:5-149:19
-INJECTED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:35:5-149:19
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:38:5-155:19
+INJECTED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:38:5-155:19
+MERGED from [androidx.core:core:1.7.0] C:\Users\26652\.gradle\caches\transforms-3\f9ae17ce744089db08ea901d5ac55cb3\transformed\core-1.7.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.7.0] C:\Users\26652\.gradle\caches\transforms-3\f9ae17ce744089db08ea901d5ac55cb3\transformed\core-1.7.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\26652\.gradle\caches\transforms-3\a4f715409e5af4f88ea5ed59753570f8\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\26652\.gradle\caches\transforms-3\a4f715409e5af4f88ea5ed59753570f8\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 	android:extractNativeLibs
-		INJECTED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml
+		INJECTED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.7.0] C:\Users\26652\.gradle\caches\transforms-3\f9ae17ce744089db08ea901d5ac55cb3\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:37:9-41
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:40:9-41
 	android:icon
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:36:9-42
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:39:9-42
 activity#net.micode.notes.ui.NotesListActivity
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:38:9-51:20
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:42:9-56:20
 	android:label
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:41:13-45
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:45:13-45
 	android:launchMode
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:42:13-43
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:46:13-43
 	android:windowSoftInputMode
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:45:13-52
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:49:13-52
 	android:uiOptions
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:44:13-57
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:48:13-57
 	android:configChanges
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:40:13-74
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:44:13-74
 	android:theme
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:43:13-45
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:47:13-45
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:39:13-49
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:43:13-49
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:47:13-50:29
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:51:13-54:29
 action#android.intent.action.MAIN
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:48:17-69
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:52:17-69
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:48:25-66
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:52:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:49:17-77
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:53:17-77
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:49:27-74
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:53:27-74
 activity#net.micode.notes.ui.NoteEditActivity
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:53:9-81:20
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:58:9-86:20
 	android:launchMode
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:56:13-43
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:61:13-43
 	android:configChanges
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:55:13-74
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:60:13-74
 	android:theme
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:57:13-45
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:62:13-45
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:54:13-48
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:59:13-48
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:mimeType:vnd.android.cursor.item/call_note+data:mimeType:vnd.android.cursor.item/text_note
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:59:13-64:29
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:64:13-69:29
 action#android.intent.action.VIEW
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:60:17-69
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:65:17-69
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:60:25-66
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:65:25-66
 category#android.intent.category.DEFAULT
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:61:17-76
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:66:17-76
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:61:27-73
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:66:27-73
 data
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:62:17-78
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:67:17-78
 	android:mimeType
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:62:23-75
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:67:23-75
 intent-filter#action:name:android.intent.action.INSERT_OR_EDIT+category:name:android.intent.category.DEFAULT+data:mimeType:vnd.android.cursor.item/call_note+data:mimeType:vnd.android.cursor.item/text_note
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:66:13-71:29
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:71:13-76:29
 action#android.intent.action.INSERT_OR_EDIT
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:67:17-79
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:72:17-79
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:67:25-76
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:72:25-76
 intent-filter#action:name:android.intent.action.SEARCH+category:name:android.intent.category.DEFAULT
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:73:13-76:29
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:78:13-81:29
 action#android.intent.action.SEARCH
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:74:17-71
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:79:17-71
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:74:25-68
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:79:25-68
 meta-data#android.app.searchable
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:78:13-80:54
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:83:13-85:54
 	android:resource
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:80:17-51
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:85:17-51
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:79:17-54
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:84:17-54
 provider#net.micode.notes.data.NotesProvider
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:83:9-86:43
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:88:9-91:43
 	android:authorities
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:85:13-47
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:90:13-47
 	android:multiprocess
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:86:13-40
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:91:13-40
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:84:13-63
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:89:13-63
 receiver#net.micode.notes.widget.NoteWidgetProvider_2x
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:88:9-100:20
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:93:9-105:20
 	android:label
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:90:13-50
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:95:13-50
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:89:13-57
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:94:13-57
 intent-filter#action:name:android.appwidget.action.APPWIDGET_DELETED+action:name:android.appwidget.action.APPWIDGET_UPDATE+action:name:android.intent.action.PRIVACY_MODE_CHANGED
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:91:13-95:29
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:96:13-100:29
 action#android.appwidget.action.APPWIDGET_UPDATE
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:92:17-84
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:97:17-84
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:92:25-81
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:97:25-81
 action#android.appwidget.action.APPWIDGET_DELETED
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:93:17-85
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:98:17-85
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:93:25-82
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:98:25-82
 action#android.intent.action.PRIVACY_MODE_CHANGED
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:94:17-85
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:99:17-85
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:94:25-82
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:99:25-82
 meta-data#android.appwidget.provider
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:97:13-99:58
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:102:13-104:58
 	android:resource
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:99:17-55
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:104:17-55
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:98:17-58
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:103:17-58
 receiver#net.micode.notes.widget.NoteWidgetProvider_4x
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:101:9-114:20
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:106:9-119:20
 	android:label
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:103:13-50
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:108:13-50
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:102:13-57
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:107:13-57
 receiver#net.micode.notes.ui.AlarmInitReceiver
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:116:9-120:20
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:121:9-125:20
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:116:19-55
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:121:19-55
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:117:13-119:29
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:122:13-124:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:118:17-79
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:123:17-79
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:118:25-76
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:123:25-76
 receiver#net.micode.notes.ui.AlarmReceiver
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:122:9-125:20
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:127:9-130:20
 	android:process
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:124:13-38
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:129:13-38
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:123:13-61
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:128:13-61
 activity#net.micode.notes.ui.AlarmAlertActivity
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:127:9-132:20
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:132:9-137:20
 	android:label
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:129:13-45
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:134:13-45
 	android:launchMode
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:130:13-48
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:135:13-48
 	android:theme
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:131:13-75
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:136:13-75
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:128:13-50
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:133:13-50
 activity#net.micode.notes.ui.NotesPreferenceActivity
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:134:9-139:20
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:139:9-144:20
 	android:label
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:136:13-54
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:141:13-54
 	android:launchMode
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:137:13-43
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:142:13-43
 	android:theme
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:138:13-60
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:143:13-60
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:135:13-71
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:140:13-71
 service#net.micode.notes.gtask.remote.GTaskSyncService
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:141:9-144:19
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:146:9-149:19
 	android:exported
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:143:13-37
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:148:13-37
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:142:13-74
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:147:13-74
 meta-data#android.app.default_searchable
-ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:146:9-148:52
+ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:151:9-153:52
 	android:value
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:148:13-49
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:153:13-49
 	android:name
-		ADDED from D:\CODE\XiaoMiNote\app\src\main\AndroidManifest.xml:147:13-58
+		ADDED from D:\CODE\11\XiaoMiNote\app\src\main\AndroidManifest.xml:152:13-58
+uses-permission#android.permission.USE_BIOMETRIC
+ADDED from [androidx.biometric:biometric:1.2.0-alpha04] C:\Users\26652\.gradle\caches\transforms-3\17f0638209d03cf5908cac1b3dbe9f73\transformed\biometric-1.2.0-alpha04\AndroidManifest.xml:24:5-72
+	android:name
+		ADDED from [androidx.biometric:biometric:1.2.0-alpha04] C:\Users\26652\.gradle\caches\transforms-3\17f0638209d03cf5908cac1b3dbe9f73\transformed\biometric-1.2.0-alpha04\AndroidManifest.xml:24:22-69
+uses-permission#android.permission.USE_FINGERPRINT
+ADDED from [androidx.biometric:biometric:1.2.0-alpha04] C:\Users\26652\.gradle\caches\transforms-3\17f0638209d03cf5908cac1b3dbe9f73\transformed\biometric-1.2.0-alpha04\AndroidManifest.xml:27:5-74
+	android:name
+		ADDED from [androidx.biometric:biometric:1.2.0-alpha04] C:\Users\26652\.gradle\caches\transforms-3\17f0638209d03cf5908cac1b3dbe9f73\transformed\biometric-1.2.0-alpha04\AndroidManifest.xml:27:22-71

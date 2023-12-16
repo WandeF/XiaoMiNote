@@ -33,6 +33,7 @@ import net.micode.notes.data.Notes.NoteColumns;
 import net.micode.notes.data.Notes.TextNote;
 import net.micode.notes.tool.EncryptionUtil;
 import net.micode.notes.tool.ResourceParser.NoteBgResources;
+import net.micode.notes.ui.NotesListActivity;
 
 
 public class WorkingNote {
@@ -128,7 +129,7 @@ public class WorkingNote {
     }
 
     // Existing note construct
-    private WorkingNote(Context context, long noteId, long folderId) {
+    public WorkingNote(Context context, long noteId, long folderId) {
         mContext = context;
         mNoteId = noteId;
         mFolderId = folderId;
@@ -136,6 +137,20 @@ public class WorkingNote {
         mNote = new Note();
         loadNote();
     }
+
+//    public WorkingNote1(Context context,long noteId, long folderId) {
+//        mNoteId = noteId;
+//        mFolderId = folderId;
+//        mIsDeleted = false;
+//        mNote = new Note();
+//        Cursor cursor = mContext.getContentResolver().query(Notes.CONTENT_DATA_URI, DATA_PROJECTION,
+//                DataColumns.NOTE_ID + "=?", new String[] {
+//                        String.valueOf(mNoteId)
+//                }, null);
+//        mSecret = cursor.getInt(DATA_SECRET_COLUMN);
+//    }
+
+
 
     private void loadNote() {
         Cursor cursor = mContext.getContentResolver().query(
@@ -181,10 +196,6 @@ public class WorkingNote {
                             mContent = "Decryption Failed";
                         }
                         mSecret = cursor.getInt(DATA_SECRET_COLUMN);
-                        if (mSecret == 1) {
-
-
-                        }
                         mMode = cursor.getInt(DATA_MODE_COLUMN);
                         mNote.setTextDataId(cursor.getLong(DATA_ID_COLUMN));
                     } else if (DataConstants.CALL_NOTE.equals(type)) {

@@ -68,6 +68,8 @@ import net.micode.notes.model.WorkingNote;
 import net.micode.notes.tool.BackupUtils;
 import net.micode.notes.tool.DataUtils;
 import net.micode.notes.tool.EncryptionUtil;
+import net.micode.notes.tool.FingerprintCallback;
+import net.micode.notes.tool.FingerprintHelper;
 import net.micode.notes.tool.ResourceParser;
 import net.micode.notes.ui.NotesListAdapter.AppWidgetAttribute;
 import net.micode.notes.widget.NoteWidgetProvider_2x;
