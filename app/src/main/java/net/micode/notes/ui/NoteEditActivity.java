@@ -467,6 +467,10 @@ public class NoteEditActivity extends Activity implements OnClickListener,
                 mNoteEditor.setTextAppearance(this,
                         TextAppearanceResources.getTexAppearanceResource(mFontSizeId));
             }
+            if (mWorkingNote.getCheckSecret() == TextNote.SECRET_CHECK_LIST) {
+                getWorkingText();
+                switchToListMode(mWorkingNote.getContent());
+            }
             mFontSizeSelector.setVisibility(View.GONE);
         }
     }
@@ -521,6 +525,12 @@ public class NoteEditActivity extends Activity implements OnClickListener,
         } else {
             menu.findItem(R.id.menu_delete_remind).setVisible(false);
         }
+        if(mWorkingNote.getCheckSecret() == TextNote.SECRET_CHECK_LIST) {
+            menu.findItem(R.id.menu_set_secret).setTitle(R.string.menu_quit_secret);
+        } else {
+            menu.findItem(R.id.menu_set_secret).setTitle(R.string.menu_set_secret);
+
+        }
         return true;
     }
 
@@ -565,6 +575,9 @@ public class NoteEditActivity extends Activity implements OnClickListener,
             setReminder();
         } else if (itemId == R.id.menu_delete_remind) {
             mWorkingNote.setAlertDate(0, false);
+        } else if (itemId == R.id.menu_set_secret) {
+            mWorkingNote.setCheckSecret(mWorkingNote.getCheckSecret() == 0 ?
+                    TextNote.SECRET_CHECK_LIST: 0);
         }
         return true;
     }
@@ -947,6 +960,27 @@ public class NoteEditActivity extends Activity implements OnClickListener,
             mEditTextList.setVisibility(View.GONE);
             mNoteEditor.setVisibility(View.VISIBLE);
             convertToImage();
+        }
+    }
+
+    @Override
+    public void onCheckSecretChanged(int oldSecret, int newSecret) {
+        if(newSecret == TextNote.SECRET_CHECK_LIST) {
+            try {
+                mNoteEditor.setText(EncryptionUtil.encrypt(mNoteEditor.getText().toString()));
+
+            } catch (Exception e) {
+                Log.e(TAG, "Decryption failed: " + e.getMessage());
+                // 处理解密失败的情况
+            }
+
+        } else {
+            try {
+                mNoteEditor.setText(EncryptionUtil.decrypt(mNoteEditor.getText().toString()));
+            } catch (Exception e) {
+                Log.e(TAG, "Decryption failed: " + e.getMessage());
+                // 处理解密失败的情况
+            }
         }
     }
 

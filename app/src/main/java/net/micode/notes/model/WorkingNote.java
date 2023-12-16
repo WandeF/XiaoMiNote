@@ -23,6 +23,8 @@ import android.database.Cursor;
 import android.text.TextUtils;
 import android.util.Log;
 
+
+
 import net.micode.notes.data.Notes;
 import net.micode.notes.data.Notes.CallNote;
 import net.micode.notes.data.Notes.DataColumns;
@@ -55,6 +57,8 @@ public class WorkingNote {
 
     private long mFolderId;
 
+    private int mSecret;
+
     private Context mContext;
 
     private static final String TAG = "WorkingNote";
@@ -71,6 +75,7 @@ public class WorkingNote {
             DataColumns.DATA2,
             DataColumns.DATA3,
             DataColumns.DATA4,
+            DataColumns.DATA5,
     };
 
     public static final String[] NOTE_PROJECTION = new String[] {
@@ -79,7 +84,8 @@ public class WorkingNote {
             NoteColumns.BG_COLOR_ID,
             NoteColumns.WIDGET_ID,
             NoteColumns.WIDGET_TYPE,
-            NoteColumns.MODIFIED_DATE
+            NoteColumns.MODIFIED_DATE,
+            //NoteColumns.SECRET
     };
 
     private static final int DATA_ID_COLUMN = 0;
@@ -89,6 +95,8 @@ public class WorkingNote {
     private static final int DATA_MIME_TYPE_COLUMN = 2;
 
     private static final int DATA_MODE_COLUMN = 3;
+
+    private static final int DATA_SECRET_COLUMN = 7;
 
     private static final int NOTE_PARENT_ID_COLUMN = 0;
 
@@ -102,6 +110,8 @@ public class WorkingNote {
 
     private static final int NOTE_MODIFIED_DATE_COLUMN = 5;
 
+    private static final int NOTE_SECRET_COLUMN = 6;
+
     // New note construct
     private WorkingNote(Context context, long folderId) {
         mContext = context;
@@ -113,6 +123,8 @@ public class WorkingNote {
         mIsDeleted = false;
         mMode = 0;
         mWidgetType = Notes.TYPE_WIDGET_INVALIDE;
+        mSecret = 0;
+
     }
 
     // Existing note construct
@@ -138,6 +150,7 @@ public class WorkingNote {
                 mWidgetType = cursor.getInt(NOTE_WIDGET_TYPE_COLUMN);
                 mAlertDate = cursor.getLong(NOTE_ALERTED_DATE_COLUMN);
                 mModifiedDate = cursor.getLong(NOTE_MODIFIED_DATE_COLUMN);
+                //mSecret = cursor.getInt(NOTE_SECRET_COLUMN);
             }
             cursor.close();
         } else {
@@ -166,6 +179,11 @@ public class WorkingNote {
                             Log.e(TAG, "Decryption failed: " + e.getMessage());
                             // 处理解密失败的情况
                             mContent = "Decryption Failed";
+                        }
+                        mSecret = cursor.getInt(DATA_SECRET_COLUMN);
+                        if (mSecret == 1) {
+
+
                         }
                         mMode = cursor.getInt(DATA_MODE_COLUMN);
                         mNote.setTextDataId(cursor.getLong(DATA_ID_COLUMN));
@@ -316,6 +334,13 @@ public class WorkingNote {
         mNote.setNoteValue(NoteColumns.PARENT_ID, String.valueOf(Notes.ID_CALL_RECORD_FOLDER));
     }
 
+    public void setmSecret(int secret) {
+        if (secret != mSecret) {
+            mSecret = secret;
+            mNote.setNoteValue(NoteColumns.SECRET, String.valueOf(mSecret));
+        }
+    }
+
     public boolean hasClockAlert() {
         return (mAlertDate > 0 ? true : false);
     }
@@ -364,6 +389,21 @@ public class WorkingNote {
         return mWidgetType;
     }
 
+    public int getCheckSecret() {
+        return mSecret;
+    }
+
+    public void setCheckSecret(int secret) {
+        if (mSecret != secret) {
+            if (mNoteSettingStatusListener != null) {
+                mNoteSettingStatusListener.onCheckSecretChanged(mSecret, secret);
+            }
+            mSecret = secret;
+            mNote.setTextData(TextNote.SECRET, String.valueOf(mSecret));
+        }
+
+    }
+
     public interface NoteSettingChangedListener {
         /**
          * Called when the background color of current note has just changed
@@ -386,5 +426,9 @@ public class WorkingNote {
          * @param newMode is new mode
          */
         void onCheckListModeChanged(int oldMode, int newMode);
+
+        void onCheckSecretChanged(int oldSecret, int newSecret);
+
+
     }
 }
