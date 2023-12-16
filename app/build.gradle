@@ -2,10 +2,9 @@ apply plugin: 'com.android.application'
 
 android {
     namespace "net.micode.notes"
-    compileSdkVersion 30
+    compileSdkVersion 34
     buildToolsVersion "34.0.0"
     useLibrary 'org.apache.http.legacy'
-
 
     defaultConfig {
         applicationId "net.micode.notes"
@@ -18,5 +17,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+    }
+    dependencies {
+        implementation 'androidx.core:core-ktx:1.7.0'
+        // 根据需要添加其他依赖项
     }
 }
