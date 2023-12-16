@@ -16,6 +16,15 @@
 
 package net.micode.notes.ui;
 
+
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.content.Context;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.content.Context;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
@@ -164,6 +173,8 @@ public class NoteEditActivity extends Activity implements OnClickListener,
     private Pattern mPattern;
 
     private static final int PHOTO_REQUEST = 123;
+
+    private static final int REQUEST_CODE_READ_EXTERNAL_STORAGE = 122;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -627,7 +638,16 @@ public class NoteEditActivity extends Activity implements OnClickListener,
     //获取文件的real path,使用查询方法来获取文件路径。
     public String getPath(final Context context, final Uri uri) {
 
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            // 如果权限尚未授予，请求权限
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    REQUEST_CODE_READ_EXTERNAL_STORAGE);
+            return null; // 在没有权限时返回或者执行其他逻辑
+        }
         final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
+
 
         // DocumentProvider
         if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
@@ -670,7 +690,11 @@ public class NoteEditActivity extends Activity implements OnClickListener,
                 final int column_index = cursor.getColumnIndexOrThrow(column);
                 return cursor.getString(column_index);
             }
-        } finally {
+        } catch (Exception e) {
+            Log.e(TAG, "Exception while querying content resolver: " + e.getMessage());
+            e.printStackTrace();
+        }
+        finally {
             if(cursor != null)
                 cursor.close();
         }
