@@ -16,12 +16,14 @@
 
 package net.micode.notes.ui;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.appwidget.AppWidgetManager;
 import android.content.AsyncQueryHandler;
 import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -60,6 +62,8 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import net.micode.notes.R;
 import net.micode.notes.data.Notes;
 import net.micode.notes.data.Notes.NoteColumns;
@@ -81,7 +85,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashSet;
 
-public class NotesListActivity extends Activity implements OnClickListener, OnItemLongClickListener {
+public class NotesListActivity extends AppCompatActivity implements OnClickListener, OnItemLongClickListener {
     private static final int FOLDER_NOTE_LIST_QUERY_TOKEN = 0;
 
     private static final int FOLDER_LIST_QUERY_TOKEN      = 1;
@@ -416,6 +420,7 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
     private void startAsyncNotesListQuery() {
         String selection = (mCurrentFolderId == Notes.ID_ROOT_FOLDER) ? ROOT_FOLDER_SELECTION
                 : NORMAL_SELECTION;
+
             mBackgroundQueryHandler.startQuery(FOLDER_NOTE_LIST_QUERY_TOKEN, null,
                     Notes.CONTENT_NOTE_URI, NoteItemData.PROJECTION, selection, new String[]{
                             String.valueOf(mCurrentFolderId)
@@ -467,6 +472,8 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
         builder.show();
     }
 
+
+
     private void createNewNote() {
         Intent intent = new Intent(this, NoteEditActivity.class);
         intent.setAction(Intent.ACTION_INSERT_OR_EDIT);
@@ -474,6 +481,7 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
         this.startActivityForResult(intent, REQUEST_CODE_NEW_NODE);
     }
 
+    @SuppressLint("StaticFieldLeak")
     private void batchDelete() {
         new AsyncTask<Void, Void, HashSet<AppWidgetAttribute>>() {
             protected HashSet<AppWidgetAttribute> doInBackground(Void... unused) {
@@ -892,7 +900,25 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
                                 || item.getType() == Notes.TYPE_SYSTEM) {
                             openFolder(item);
                         } else if (item.getType() == Notes.TYPE_NOTE) {
-                            openNode(item);
+
+                            if(item.getSecret() == 1) {
+                                FingerprintHelper fingerprintHelper = new FingerprintHelper(NotesListActivity.this, new FingerprintCallback() {
+                                    @Override
+                                    public void onAuthenticationResult(boolean success) {
+                                        // 处理认证结果
+                                        if (success) {
+                                            Toast.makeText(NotesListActivity.this, "指纹认证成功", Toast.LENGTH_SHORT).show();
+                                            openNode(item);
+                                        } else {
+                                            Toast.makeText(NotesListActivity.this, "指纹认证失败", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                                fingerprintHelper.startFingerprintAuthentication();
+                            } else {
+                                openNode(item);
+                            }
+
                         } else {
                             Log.e(TAG, "Wrong note type in NOTE_LIST");
                         }
@@ -900,7 +926,23 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
                     case SUB_FOLDER:
                     case CALL_RECORD_FOLDER:
                         if (item.getType() == Notes.TYPE_NOTE) {
-                            openNode(item);
+                            if(item.getSecret() == 1) {
+                                FingerprintHelper fingerprintHelper = new FingerprintHelper(NotesListActivity.this, new FingerprintCallback() {
+                                    @Override
+                                    public void onAuthenticationResult(boolean success) {
+                                        // 处理认证结果
+                                        if (success) {
+                                            Toast.makeText(NotesListActivity.this, "指纹认证成功", Toast.LENGTH_SHORT).show();
+                                            openNode(item);
+                                        } else {
+                                            Toast.makeText(NotesListActivity.this, "指纹认证失败", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                                fingerprintHelper.startFingerprintAuthentication();
+                            } else {
+                                openNode(item);
+                            }
                         } else {
                             Log.e(TAG, "Wrong note type in SUB_FOLDER");
                         }
@@ -934,7 +976,8 @@ public class NotesListActivity extends Activity implements OnClickListener, OnIt
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
         if (view instanceof NotesListItem) {
             mFocusNoteDataItem = ((NotesListItem) view).getItemData();
-            if (mFocusNoteDataItem.getType() == Notes.TYPE_NOTE && !mNotesListAdapter.isInChoiceMode()) {
+            if (mFocusNoteDataItem.getType() == Notes.TYPE_NOTE && !mNotesListAdapter.isInChoiceMode() &&mFocusNoteDataItem.getSecret() == 0) {
+
                 if (mNotesListView.startActionMode(mModeCallBack) != null) {
                     mModeCallBack.onItemCheckedStateChanged(null, position, id, true);
                     mNotesListView.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);

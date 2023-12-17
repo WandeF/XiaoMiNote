@@ -45,6 +45,7 @@ public class NoteItemData {
         NoteColumns.TYPE,
         NoteColumns.WIDGET_ID,
         NoteColumns.WIDGET_TYPE,
+        NoteColumns.SECRET,
     };
 
     private static final int ID_COLUMN                    = 0;
@@ -59,6 +60,7 @@ public class NoteItemData {
     private static final int TYPE_COLUMN                  = 9;
     private static final int WIDGET_ID_COLUMN             = 10;
     private static final int WIDGET_TYPE_COLUMN           = 11;
+    private static final int SECRET_COLUMN                = 12;
 
     private long mId;
     private long mAlertDate;
@@ -72,6 +74,8 @@ public class NoteItemData {
     private int mType;
     private int mWidgetId;
     private int mWidgetType;
+
+    private int secret;
     private String mName;
     private String mPhoneNumber;
     private String decryptedContent;
@@ -92,15 +96,29 @@ public class NoteItemData {
         mNotesCount = cursor.getInt(NOTES_COUNT_COLUMN);
         mParentId = cursor.getLong(PARENT_ID_COLUMN);
         mSnippet = cursor.getString(SNIPPET_COLUMN);
+        secret = cursor.getInt(SECRET_COLUMN);
+        if (secret == 1) {
+            try {
+                char first = EncryptionUtil.decrypt(mSnippet).charAt(0);
+                // 解密文本数据并保存到字段中
+                mSnippet = "【私密文件】:" +  first;
+            } catch (Exception e) {
+                Log.e(TAG, "Decryption failed: " + e.getMessage());
+                // 处理解密失败的情况
+                mSnippet = "Decryption Failed";
+            }
 
-        try {
-            // 解密文本数据并保存到字段中
-            mSnippet = EncryptionUtil.decrypt(mSnippet);
-        } catch (Exception e) {
-            Log.e(TAG, "Decryption failed: " + e.getMessage());
-            // 处理解密失败的情况
-            mSnippet = "Decryption Failed";
+        } else {
+            try {
+                // 解密文本数据并保存到字段中
+                mSnippet = EncryptionUtil.decrypt(mSnippet);
+            } catch (Exception e) {
+                Log.e(TAG, "Decryption failed: " + e.getMessage());
+                // 处理解密失败的情况
+                mSnippet = "Decryption Failed";
+            }
         }
+
         mSnippet = mSnippet.replace(NoteEditActivity.TAG_CHECKED, "").replace(
                 NoteEditActivity.TAG_UNCHECKED, "");
 
@@ -136,6 +154,7 @@ public class NoteItemData {
         mNotesCount = cursor.getInt(NOTES_COUNT_COLUMN);
         mParentId = cursor.getLong(PARENT_ID_COLUMN);
         //mSnippet = cursor.getString(SNIPPET_COLUMN);
+        //secret = cursor.getInt(SECRET_COLUMN);
         try {
             // 解密文本数据并保存到字段中
             mSnippet = EncryptionUtil.decrypt(cursor.getString(SNIPPET_COLUMN));
@@ -284,4 +303,6 @@ public class NoteItemData {
     public static int getNoteType(Cursor cursor) {
         return cursor.getInt(TYPE_COLUMN);
     }
+
+    public int getSecret() { return secret; }
 }

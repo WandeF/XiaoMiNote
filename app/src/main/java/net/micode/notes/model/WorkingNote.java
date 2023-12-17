@@ -86,7 +86,7 @@ public class WorkingNote {
             NoteColumns.WIDGET_ID,
             NoteColumns.WIDGET_TYPE,
             NoteColumns.MODIFIED_DATE,
-            //NoteColumns.SECRET
+            NoteColumns.SECRET
     };
 
     private static final int DATA_ID_COLUMN = 0;
@@ -165,7 +165,7 @@ public class WorkingNote {
                 mWidgetType = cursor.getInt(NOTE_WIDGET_TYPE_COLUMN);
                 mAlertDate = cursor.getLong(NOTE_ALERTED_DATE_COLUMN);
                 mModifiedDate = cursor.getLong(NOTE_MODIFIED_DATE_COLUMN);
-                //mSecret = cursor.getInt(NOTE_SECRET_COLUMN);
+                mSecret = cursor.getInt(NOTE_SECRET_COLUMN);
             }
             cursor.close();
         } else {
@@ -236,6 +236,7 @@ public class WorkingNote {
             }
 
             mNote.syncNote(mContext, mNoteId);
+
 
             /**
              * Update widget content if there exist any widget of this note
@@ -346,10 +347,9 @@ public class WorkingNote {
     }
 
     public void setmSecret(int secret) {
-        if (secret != mSecret) {
-            mSecret = secret;
-            mNote.setNoteValue(NoteColumns.SECRET, String.valueOf(mSecret));
-        }
+
+            mNote.setNoteValue(NoteColumns.SECRET, String.valueOf(secret));
+
     }
 
     public boolean hasClockAlert() {

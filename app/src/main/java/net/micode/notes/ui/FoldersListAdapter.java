@@ -16,8 +16,12 @@
 
 package net.micode.notes.ui;
 
+import static net.micode.notes.data.Notes.TAG;
+
 import android.content.Context;
 import android.database.Cursor;
+import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
@@ -27,16 +31,19 @@ import android.widget.TextView;
 import net.micode.notes.R;
 import net.micode.notes.data.Notes;
 import net.micode.notes.data.Notes.NoteColumns;
+import net.micode.notes.tool.EncryptionUtil;
 
 
 public class FoldersListAdapter extends CursorAdapter {
     public static final String [] PROJECTION = {
         NoteColumns.ID,
-        NoteColumns.SNIPPET
+        NoteColumns.SNIPPET,
+        NoteColumns.SECRET,
     };
 
     public static final int ID_COLUMN   = 0;
     public static final int NAME_COLUMN = 1;
+    public static final int SECRET_COLUMN = 2;
 
     public FoldersListAdapter(Context context, Cursor c) {
         super(context, c);
@@ -51,17 +58,41 @@ public class FoldersListAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         if (view instanceof FolderListItem) {
-            String folderName = (cursor.getLong(ID_COLUMN) == Notes.ID_ROOT_FOLDER) ? context
-                    .getString(R.string.menu_move_parent_folder) : cursor.getString(NAME_COLUMN);
-            ((FolderListItem) view).bind(folderName);
+            String encryptedFolderName = cursor.getString(NAME_COLUMN);
+
+            try {
+                // 解密文件夹名称
+                String decryptedFolderName = EncryptionUtil.decrypt(encryptedFolderName);
+                String folderName = (cursor.getLong(ID_COLUMN) == Notes.ID_ROOT_FOLDER) ?
+                        context.getString(R.string.menu_move_parent_folder) : decryptedFolderName;
+
+                ((FolderListItem) view).bind(folderName);
+            } catch (Exception e) {
+                Log.e(TAG, "Decryption of folder name failed: " + e.getMessage());
+                // 处理解密失败的情况
+                String folderName = "Decryption Failed";
+                ((FolderListItem) view).bind(folderName);
+            }
         }
     }
 
+
     public String getFolderName(Context context, int position) {
         Cursor cursor = (Cursor) getItem(position);
-        return (cursor.getLong(ID_COLUMN) == Notes.ID_ROOT_FOLDER) ? context
-                .getString(R.string.menu_move_parent_folder) : cursor.getString(NAME_COLUMN);
+        String encryptedFolderName = cursor.getString(NAME_COLUMN);
+
+        try {
+            // 解密文件夹名称
+            String decryptedFolderName = EncryptionUtil.decrypt(encryptedFolderName);
+            return (cursor.getLong(ID_COLUMN) == Notes.ID_ROOT_FOLDER) ? context.getString(R.string.menu_move_parent_folder) : decryptedFolderName;
+        } catch (Exception e) {
+            Log.e(TAG, "Decryption of folder name failed: " + e.getMessage());
+            // 处理解密失败的情况
+            return "Decryption Failed";
+        }
     }
+
+
 
     private class FolderListItem extends LinearLayout {
         private TextView mName;
@@ -75,6 +106,10 @@ public class FoldersListAdapter extends CursorAdapter {
         public void bind(String name) {
             mName.setText(name);
         }
+    }
+    public int getSecret(Context context, int position) {
+        Cursor cursor =(Cursor) getItem(position);
+        return cursor.getInt(SECRET_COLUMN);
     }
 
 }

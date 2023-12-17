@@ -33,12 +33,13 @@ import net.micode.notes.R;
 import net.micode.notes.data.Notes.DataColumns;
 import net.micode.notes.data.Notes.NoteColumns;
 import net.micode.notes.data.NotesDatabaseHelper.TABLE;
+import net.micode.notes.gtask.data.SqlNote;
 
 
 public class NotesProvider extends ContentProvider {
     private static final UriMatcher mMatcher;
 
-    private NotesDatabaseHelper mHelper;
+    private static NotesDatabaseHelper mHelper;
 
     private static final String TAG = "NotesProvider";
 
@@ -78,6 +79,28 @@ public class NotesProvider extends ContentProvider {
         + " WHERE " + NoteColumns.SNIPPET + " LIKE ?"
         + " AND " + NoteColumns.PARENT_ID + "<>" + Notes.ID_TRASH_FOLER
         + " AND " + NoteColumns.TYPE + "=" + Notes.TYPE_NOTE;
+
+    public static boolean isSecret(long id) {
+        SQLiteDatabase db;
+        db = mHelper.getReadableDatabase();
+        Cursor cursor = null;
+        cursor = db.query(NotesDatabaseHelper.TABLE.NOTE, null, null, null, null, null,
+                null);
+        //判断游标是否为空
+        if (cursor.moveToFirst()) {
+            //遍历游标
+            for (int index = 1; index < cursor.getCount(); index++) {
+                cursor.moveToNext();
+                if (cursor.getLong(SqlNote.ID_COLUMN) == id
+                        && !cursor.getString(SqlNote.SECRET_COLUMN).equals("0")) {
+                    cursor.close();
+                    return true;
+                }
+            }
+        }
+        cursor.close();
+        return false;
+    }
 
     @Override
     public boolean onCreate() {

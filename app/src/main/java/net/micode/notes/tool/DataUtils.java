@@ -29,6 +29,7 @@ import android.util.Log;
 import net.micode.notes.data.Notes;
 import net.micode.notes.data.Notes.CallNote;
 import net.micode.notes.data.Notes.NoteColumns;
+import net.micode.notes.data.NotesProvider;
 import net.micode.notes.ui.NotesListAdapter.AppWidgetAttribute;
 
 import java.util.ArrayList;
@@ -51,6 +52,9 @@ public class DataUtils {
         for (long id : ids) {
             if(id == Notes.ID_ROOT_FOLDER) {
                 Log.e(TAG, "Don't delete system folder root");
+                continue;
+            }
+            if(NotesProvider.isSecret(id)) {
                 continue;
             }
             ContentProviderOperation.Builder builder = ContentProviderOperation

@@ -601,6 +601,7 @@ public class NoteEditActivity extends AppCompatActivity implements OnClickListen
                         Toast.makeText(NoteEditActivity.this, "指纹认证成功", Toast.LENGTH_SHORT).show();
                         mWorkingNote.setCheckSecret(mWorkingNote.getCheckSecret() == 0 ?
                                 TextNote.SECRET_CHECK_LIST: 0);
+                        mWorkingNote.setmSecret(mWorkingNote.getCheckSecret());
                     } else {
                         Toast.makeText(NoteEditActivity.this, "指纹认证失败", Toast.LENGTH_SHORT).show();
                     }
@@ -1010,7 +1011,7 @@ public class NoteEditActivity extends AppCompatActivity implements OnClickListen
 
         if(newSecret == TextNote.SECRET_CHECK_LIST) {
             try {
-                mNoteEditor.setText(EncryptionUtil.encrypt(mNoteEditor.getText().toString()));
+                //mNoteEditor.setText(EncryptionUtil.encrypt(mNoteEditor.getText().toString()));
                 mWorkingNote.setBgColorId(1);
             } catch (Exception e) {
                 Log.e(TAG, "Decryption failed: " + e.getMessage());
@@ -1018,7 +1019,7 @@ public class NoteEditActivity extends AppCompatActivity implements OnClickListen
             }
         } else {
             try {
-                mNoteEditor.setText(EncryptionUtil.decrypt(mNoteEditor.getText().toString()));
+                //mNoteEditor.setText(EncryptionUtil.decrypt(mNoteEditor.getText().toString()));
                 mWorkingNote.setBgColorId(0);
 
             } catch (Exception e) {
