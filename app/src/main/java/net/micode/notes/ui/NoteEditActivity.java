@@ -79,6 +79,7 @@ import androidx.core.content.ContextCompat;
 import net.micode.notes.R;
 import net.micode.notes.data.Notes;
 import net.micode.notes.data.Notes.TextNote;
+import net.micode.notes.model.Note;
 import net.micode.notes.model.WorkingNote;
 import net.micode.notes.model.WorkingNote.NoteSettingChangedListener;
 import net.micode.notes.tool.DataUtils;
@@ -548,6 +549,11 @@ public class NoteEditActivity extends AppCompatActivity implements OnClickListen
             menu.findItem(R.id.menu_set_secret).setTitle(R.string.menu_set_secret);
 
         }
+        if (mWorkingNote.getTopId() == 1) {
+            menu.findItem(R.id.menu_set_top).setTitle(R.string.menu_cancel_top);
+        } else  {
+            menu.findItem(R.id.menu_set_top).setTitle(R.string.menu_set_top);
+        }
         return true;
     }
 
@@ -608,6 +614,9 @@ public class NoteEditActivity extends AppCompatActivity implements OnClickListen
                 }
             });
             fingerprintHelper.startFingerprintAuthentication();
+        } else if (itemId == R.id.menu_set_top) {
+            mWorkingNote.setTop(mWorkingNote.getTopId() == 0 ?
+                    1:0);
         }
         return true;
     }
@@ -1027,6 +1036,16 @@ public class NoteEditActivity extends AppCompatActivity implements OnClickListen
                 // 处理解密失败的情况
             }
         }
+    }
+
+    @Override
+    public void onTopChanged(int top) {
+        if(top == 1) {
+            mWorkingNote.setBgColorId(2);
+        } else {
+            mWorkingNote.setBgColorId(0);
+        }
+
     }
 
     private boolean getWorkingText() {

@@ -61,7 +61,8 @@ public class NotesDatabaseHelper extends SQLiteOpenHelper {
             NoteColumns.ORIGIN_PARENT_ID + " INTEGER NOT NULL DEFAULT 0," +
             NoteColumns.GTASK_ID + " TEXT NOT NULL DEFAULT ''," +
             NoteColumns.VERSION + " INTEGER NOT NULL DEFAULT 0," +
-            NoteColumns.SECRET + " INTEGER NOT NULL DEFAULT 0" +
+            NoteColumns.SECRET + " INTEGER NOT NULL DEFAULT 0," +
+                NoteColumns.TOP + " INTEGER NOT NULL DEFAULT 0" +
         ")";
 
     private static final String CREATE_DATA_TABLE_SQL =
@@ -322,6 +323,10 @@ public class NotesDatabaseHelper extends SQLiteOpenHelper {
             upgradeToV4(db);
             oldVersion++;
         }
+        if (oldVersion == 4) {
+            upgradeToV5(db);
+            oldVersion++;
+        }
 
         if (reCreateTriggers) {
             reCreateNoteTableTriggers(db);
@@ -332,6 +337,11 @@ public class NotesDatabaseHelper extends SQLiteOpenHelper {
             throw new IllegalStateException("Upgrade notes database to version " + newVersion
                     + "fails");
         }
+    }
+
+    private void upgradeToV5(SQLiteDatabase db) {
+        db.execSQL("ALTER TABLE " + TABLE.NOTE + " ADD COLUMN " + NoteColumns.TOP
+                + " INTEGER NOT NULL DEFAULT 0");
     }
 
     private void upgradeToV2(SQLiteDatabase db) {

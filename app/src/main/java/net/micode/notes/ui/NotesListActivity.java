@@ -421,10 +421,15 @@ public class NotesListActivity extends AppCompatActivity implements OnClickListe
         String selection = (mCurrentFolderId == Notes.ID_ROOT_FOLDER) ? ROOT_FOLDER_SELECTION
                 : NORMAL_SELECTION;
 
-            mBackgroundQueryHandler.startQuery(FOLDER_NOTE_LIST_QUERY_TOKEN, null,
-                    Notes.CONTENT_NOTE_URI, NoteItemData.PROJECTION, selection, new String[]{
-                            String.valueOf(mCurrentFolderId)
-                    }, NoteColumns.TYPE + " DESC," + NoteColumns.MODIFIED_DATE + " DESC");
+//            mBackgroundQueryHandler.startQuery(FOLDER_NOTE_LIST_QUERY_TOKEN, null,
+//                    Notes.CONTENT_NOTE_URI, NoteItemData.PROJECTION, selection, new String[]{
+//                            String.valueOf(mCurrentFolderId)
+//                    }, NoteColumns.TYPE + " DESC," + NoteColumns.MODIFIED_DATE + " DESC");
+        mBackgroundQueryHandler.startQuery(FOLDER_NOTE_LIST_QUERY_TOKEN, null,
+                Notes.CONTENT_NOTE_URI, NoteItemData.PROJECTION, selection, new String[] {
+                        String.valueOf(mCurrentFolderId)
+                }, NoteColumns.TOP+ " DESC,"+ NoteColumns.TYPE + " DESC,"
+                        + NoteColumns.MODIFIED_DATE + " DESC");
     }
 
     private final class BackgroundQueryHandler extends AsyncQueryHandler {

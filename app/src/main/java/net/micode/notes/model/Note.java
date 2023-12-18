@@ -131,6 +131,10 @@ public class Note {
         return true;
     }
 
+    public void setTopValue(String key, String value) {
+        mNoteDiffValues.put(key, value);
+    }
+
     private class NoteData {
         private long mTextDataId;
 

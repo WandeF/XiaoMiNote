@@ -60,6 +60,8 @@ public class WorkingNote {
 
     private int mSecret;
 
+    private int mTop;
+
     private Context mContext;
 
     private static final String TAG = "WorkingNote";
@@ -86,7 +88,8 @@ public class WorkingNote {
             NoteColumns.WIDGET_ID,
             NoteColumns.WIDGET_TYPE,
             NoteColumns.MODIFIED_DATE,
-            NoteColumns.SECRET
+            NoteColumns.SECRET,
+            NoteColumns.TOP,
     };
 
     private static final int DATA_ID_COLUMN = 0;
@@ -113,6 +116,8 @@ public class WorkingNote {
 
     private static final int NOTE_SECRET_COLUMN = 6;
 
+    private static final int NOTE_TOP_COLUMN = 7;
+
     // New note construct
     private WorkingNote(Context context, long folderId) {
         mContext = context;
@@ -125,7 +130,7 @@ public class WorkingNote {
         mMode = 0;
         mWidgetType = Notes.TYPE_WIDGET_INVALIDE;
         mSecret = 0;
-
+        mTop = 0;
     }
 
     // Existing note construct
@@ -166,6 +171,7 @@ public class WorkingNote {
                 mAlertDate = cursor.getLong(NOTE_ALERTED_DATE_COLUMN);
                 mModifiedDate = cursor.getLong(NOTE_MODIFIED_DATE_COLUMN);
                 mSecret = cursor.getInt(NOTE_SECRET_COLUMN);
+                mTop = cursor.getInt(NOTE_TOP_COLUMN);
             }
             cursor.close();
         } else {
@@ -352,6 +358,16 @@ public class WorkingNote {
 
     }
 
+    public void setTop(int Top) {
+        if(mTop!= Top) {
+            mTop = Top;
+            mNote.setTopValue(NoteColumns.TOP, String.valueOf(mTop));
+        }
+        if(mNoteSettingStatusListener !=null) {
+            mNoteSettingStatusListener.onTopChanged(Top);
+        }
+    }
+
     public boolean hasClockAlert() {
         return (mAlertDate > 0 ? true : false);
     }
@@ -415,6 +431,10 @@ public class WorkingNote {
 
     }
 
+    public int getTopId() {
+        return mTop;
+    }
+
     public interface NoteSettingChangedListener {
         /**
          * Called when the background color of current note has just changed
@@ -441,5 +461,6 @@ public class WorkingNote {
         void onCheckSecretChanged(int oldSecret, int newSecret);
 
 
+        void onTopChanged(int top);
     }
 }

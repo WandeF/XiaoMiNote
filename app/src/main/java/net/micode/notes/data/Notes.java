@@ -166,6 +166,8 @@ public class Notes {
          */
         public static final String VERSION = "version";
         public static final String SECRET = "secret";
+
+        public static final String TOP = "top";
     }
 
     public interface DataColumns {

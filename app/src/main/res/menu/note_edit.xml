@@ -56,6 +56,10 @@
         android:id="@+id/menu_set_secret"
         android:title="@string/menu_set_secret"
         />
+    <item
+        android:id="@+id/menu_set_top"
+        android:title="@string/menu_set_top"/>
+
     
 
 </menu>
