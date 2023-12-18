@@ -17,7 +17,6 @@
 package net.micode.notes.ui;
 
 import static net.micode.notes.data.Notes.TAG;
-import static net.micode.notes.gtask.data.SqlData.DATA_CONTENT_COLUMN;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -305,4 +304,27 @@ public class NoteItemData {
     }
 
     public int getSecret() { return secret; }
+    public static NoteItemData getItemById(Context context, long noteId) {
+        String selection = NoteColumns.ID + "=?";
+        String[] selectionArgs = { String.valueOf(noteId) };
+
+        Cursor cursor = context.getContentResolver().query(
+                Notes.CONTENT_NOTE_URI,
+                NoteItemData.PROJECTION,
+                selection,
+                selectionArgs,
+                null);
+
+        NoteItemData noteItemData = null;
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                // 创建NoteItemData对象
+                noteItemData = new NoteItemData(context, cursor);
+            }
+            cursor.close();
+        }
+
+        return noteItemData;
+    }
+
 }

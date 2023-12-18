@@ -23,7 +23,6 @@ import android.app.Dialog;
 import android.appwidget.AppWidgetManager;
 import android.content.AsyncQueryHandler;
 import android.content.ContentResolver;
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -55,6 +54,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -83,7 +83,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
 public class NotesListActivity extends AppCompatActivity implements OnClickListener, OnItemLongClickListener {
     private static final int FOLDER_NOTE_LIST_QUERY_TOKEN = 0;
@@ -593,6 +596,209 @@ public class NotesListActivity extends AppCompatActivity implements OnClickListe
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
+    private void searchDialog(){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View view = LayoutInflater.from(this).inflate(R.layout.dialog_edit_text, null);
+        final EditText etName = (EditText) view.findViewById(R.id.et_foler_name);
+        showSoftInput();
+        etName.setText("");
+
+        builder.setPositiveButton(R.string.start_search, null);
+        final Dialog dialog = builder.setView(view).show();
+        final Button positive = (Button)dialog.findViewById(android.R.id.button1);
+        positive.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                hideSoftInput(etName);
+                HashMap<String, Long> searchResults = SearchQuery(mContentResolver, etName.getText().toString());
+                dialog.dismiss();
+                showSearchResult(searchResults);
+            }
+        });
+    }
+
+    private HashMap<String, Long> SearchQuery(ContentResolver resolver, String keyword) {
+        HashMap<String, Long> searchResults = new HashMap<>();
+
+        Cursor cursor = resolver.query(
+                Notes.CONTENT_NOTE_URI,
+                new String[]{NoteColumns.ID, NoteColumns.SNIPPET},
+                NoteColumns.PARENT_ID + "<>" + Notes.ID_TRASH_FOLER,
+                null,
+                null
+        );
+
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                int idColumnIndex = cursor.getColumnIndex(NoteColumns.ID);
+                int snippetColumnIndex = cursor.getColumnIndex(NoteColumns.SNIPPET);
+                if (snippetColumnIndex != -1 && idColumnIndex != -1) {
+                    long noteId = cursor.getLong(idColumnIndex);
+                    String encryptedSnippet = cursor.getString(snippetColumnIndex);
+                    String decryptedSnippet;
+                    try {
+                        // 解密加密的 SNIPPET 字段
+                        decryptedSnippet = EncryptionUtil.decrypt(encryptedSnippet); // 假设这是解密方法
+                    } catch (Exception e) {
+                        Log.e(TAG, "Decryption failed: " + e.getMessage());
+                        // 处理解密失败的情况
+                        decryptedSnippet = "Decryption Failed";
+                    }
+
+                    // 进行模糊查询匹配
+                    if (decryptedSnippet.toLowerCase().contains(keyword.toLowerCase())) {
+                        // 将解密后的摘要信息作为键，对应的 ID 作为值，保存到 HashMap 中
+                        searchResults.put(decryptedSnippet, noteId);
+                    }
+                } else {
+                    // 列名未找到的处理逻辑
+                }
+            } while (cursor.moveToNext());
+
+            cursor.close();
+        }
+
+        return searchResults;
+    }
+
+//    private ArrayList<String> SearchQuery(ContentResolver resolver, String keyword) {
+//        ArrayList<String> searchResults = new ArrayList<>();
+//
+//        Cursor cursor = resolver.query(Notes.CONTENT_NOTE_URI,
+//                new String[]{NoteColumns.SNIPPET},
+//                NoteColumns.PARENT_ID + "<>" + Notes.ID_TRASH_FOLER,
+//                null,
+//                null);
+//
+//        if (cursor != null && cursor.moveToFirst()) {
+//            do {
+//                int snippetColumnIndex = cursor.getColumnIndex(NoteColumns.SNIPPET);
+//                if (snippetColumnIndex != -1) {
+//                    String encryptedSnippet = cursor.getString(snippetColumnIndex);
+//                    String decryptedSnippet;
+//                    try {
+//                        // 解密加密的 SNIPPET 字段
+//                        decryptedSnippet = EncryptionUtil.decrypt(encryptedSnippet); // 假设这是解密方法
+//                    } catch (Exception e) {
+//                        Log.e(TAG, "Decryption failed: " + e.getMessage());
+//                        // 处理解密失败的情况
+//                        decryptedSnippet = "Decryption Failed";
+//                    }
+//
+//                    // 进行模糊查询匹配
+//                    if (decryptedSnippet.toLowerCase().contains(keyword.toLowerCase())) {
+//                        searchResults.add(decryptedSnippet);
+//                    }
+//                } else {
+//                    // 列名未找到的处理逻辑
+//                }
+//
+//            } while (cursor.moveToNext());
+//
+//            cursor.close();
+//        }
+//
+//        return searchResults;
+//    }
+
+//    private Cursor SearchQuery(ContentResolver resolver, String keyword) {
+//        String Fname=null;
+//        try {
+//            Fname = EncryptionUtil.encrypt(keyword);
+//        } catch (Exception e) {
+//            Log.e(TAG, "Encryption failed: " + e.getMessage());
+//            // 处理加密失败的情况
+//            Fname = "Encryption Failed";
+//        }
+//        Cursor cursor = resolver.query(Notes.CONTENT_NOTE_URI, null,
+//                NoteColumns.PARENT_ID + "<>" + Notes.ID_TRASH_FOLER +
+//                        " AND " + NoteColumns.SNIPPET + "=?",
+//                new String[] { Fname }, null);
+//        return cursor;
+//    }
+    private void showSearchResult(final HashMap<String, Long> resultList) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(NotesListActivity.this);
+        builder.setTitle("Search Results");
+
+        // 获取搜索结果的键集合，用于创建一个列表
+        final List<String> searchResults = new ArrayList<>(resultList.keySet());
+
+        // 将结果列表放入 ArrayAdapter
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(NotesListActivity.this, android.R.layout.simple_list_item_1, searchResults);
+
+        // 设置列表适配器
+        builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int position) {
+                String selectedSnippet = searchResults.get(position);
+                Long noteId = resultList.get(selectedSnippet);
+
+                // 根据选定项的 ID 获取便签数据
+                if (noteId != null) {
+                    NoteItemData itemData = NoteItemData.getItemById(NotesListActivity.this, noteId);
+
+                    if (itemData != null) {
+                        if (itemData.getType() == 0) {
+                            openNode(itemData);
+                        } else {
+                            openFolder(itemData);
+                        }
+                    } else {
+                        // 处理无法获取便签数据的情况
+                    }
+                } else {
+                    // 处理无效的便签 ID 的情况
+                }
+
+                // 关闭对话框
+                dialog.dismiss();
+            }
+        });
+
+        // 创建并显示对话框
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+
+//    private void showSearchResult(ArrayList<String> result) {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(NotesListActivity.this);
+//        builder.setTitle("Search Results");
+//
+//        // 将查询结果拼接为一个字符串
+//        StringBuilder resultText = new StringBuilder();
+//        for (String item : result) {
+//            resultText.append(item).append("\n"); // 每个结果占一行
+//        }
+//
+//        // 将结果文本设置为对话框的消息
+//        builder.setMessage(resultText.toString());
+//
+//        // 创建并显示对话框
+//        AlertDialog alertDialog = builder.create();
+//        alertDialog.show();
+//    }
+
+//    private void showSearchResult(ArrayList<String> result) {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(NotesListActivity.this);
+//        builder.setTitle(R.string.menu_title_select_folder);
+//        final FoldersListAdapter adapter = new FoldersListAdapter(this, result);
+//        builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
+//
+//            public void onClick(DialogInterface dialog, int which) {
+//                DataUtils.batchMoveToFolder(mContentResolver,
+//                        mNotesListAdapter.getSelectedItemIds(), adapter.getItemId(which));
+//                Toast.makeText(
+//                        NotesListActivity.this,
+//                        getString(R.string.format_move_notes_to_folder,
+//                                mNotesListAdapter.getSelectedCount(),
+//                                adapter.getFolderName(NotesListActivity.this, which)),
+//                        Toast.LENGTH_SHORT).show();
+//                mModeCallBack.finishActionMode();
+//            }
+//        });
+//        builder.show();
+//    }
+
     private void showCreateOrModifyFolderDialog(final boolean create) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View view = LayoutInflater.from(this).inflate(R.layout.dialog_edit_text, null);
@@ -822,7 +1028,7 @@ public class NotesListActivity extends AppCompatActivity implements OnClickListe
         } else if (itemId == R.id.menu_new_note) {
             createNewNote();
         } else if (itemId == R.id.menu_search) {
-            onSearchRequested();
+            searchDialog();
         }
         return true;
     }
